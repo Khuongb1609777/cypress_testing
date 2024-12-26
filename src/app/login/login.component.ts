@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 				if (this.isLoggedInFunction()) {
 					// Usually you would use the redirect URL from the auth service.
 					// However to keep the example simple, we will always redirect to `/admin`.
-					const redirectUrl = '/dashboard';
+					const redirectUrl = '/student-table';
 	
 					// Set our navigation extras object
 					// that passes on our global query params and fragment
