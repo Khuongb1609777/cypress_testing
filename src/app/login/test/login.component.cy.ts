@@ -27,19 +27,19 @@ describe('LoginComponent tests', () => {
         })
     
         it("Error message on the email username field", () => {
-            cy.get('@username').type('deepak');
+            cy.get('@username').type('ngnhkhuong');
             cy.get('@username').blur();
             cy.get('mat-error').first().should("have.text", "Email is required");
         })
     
         it("No error message found when field was valid", () => {
-            cy.get('@username').type('deepak@gmail.com');
+            cy.get('@username').type('ngnhkhuong@gmail.com');
             cy.get('@username').blur();
             cy.get('mat-error').should("not.exist");
         })
     
         it("Login button gets enabled", () => {
-            cy.get('@username').type('deepak@gmail.com');
+            cy.get('@username').type('ngnhkhuong@gmail.com');
             cy.get('@password').type("password");
             cy.get('.mdc-button__label').should("have.text", "Login");
         })
@@ -60,7 +60,7 @@ describe('LoginComponent tests', () => {
     
             cy.stub(LoginComponent.prototype, 'isLoggedInFunction').returns(false);
     
-            cy.get('@username').type('deepak@jha.com');
+            cy.get('@username').type('ngnhkhuong@gmail.com');
             cy.get('@password').type("password");
             cy.get('@loginButton').should("have.text", "Login");
             cy.get('@loginButton').click();
